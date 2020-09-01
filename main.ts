@@ -3,20 +3,28 @@
  */
 //% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
-
+    //% block
+    export function helloWorld() {
+    }
     //% blockId=device_show_number
-    //% weight=100 block="show|number %v"
-    export function showNumber0(v: number, interval: number = 150): void { }
+    //% block="show|number %v"
+    export function showNumber(value: number, interval?: number) {
+        showString(Math.roundWithPrecision(value, 2).toString(), interval);
+    }
 
-    //% weight=99 block
-    export function Test1(v: number, interval: number = 150): void { }
+    //% block="Connect|device|Pin %v"
+    export function device_connect(value: number) {
+        showNumber(value);
+    }
+    
+    //% block
+    export function add(x: number, y: number): number {
+        return x + y;
+    }
 
-    //% blockId=device_show_number3
-    //% weight=98 block="show|number %v"
-    export function showNumber3(v: number, interval: number = 150): void { }
-
-    //% blockId=device_show_number4
-    //% weight=98 block="show|n|umber %v"
-    export function showTest(v: number, interval: number = 150): void { }
+    //% block
+    export function fib(value: number): number {
+        return value <= 1 ? value : fib(value - 1) + fib(value - 2);
+    }
 
 }
