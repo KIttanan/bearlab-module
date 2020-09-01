@@ -16,4 +16,8 @@ namespace BearLab {
     //% weight=98 block="show|number %v"
     export function showNumber3(v: number, interval: number = 150): void { }
 
+    //% blockId=device_show_number4
+    //% weight=98 block="show|n|umber %v"
+    export function showTest(v: number, interval: number = 150): void { }
+
 }
