@@ -1,7 +1,7 @@
 /**
  * BearLab graphics blocks
  */
-//% color=190 weight=100 icon="\f1b0" block="BearLab"
+//% color=190 weight=100 icon="\uf1b0" block="BearLab"
 //% groups=['LED matrix', 'Control flow', 'others']
 namespace BearLab {
 
