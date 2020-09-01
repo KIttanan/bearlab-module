@@ -6,14 +6,14 @@
 namespace BearLab {
 
     //% blockId=device_show_number
-    //% block="show|number %v"
+    //% weight=100 block="show|number %v"
     export function showNumber0(v: number, interval: number = 150): void { }
 
-    //% block
+    //% weight=99 block
     export function showNumber1(v: number, interval: number = 150): void { }
 
     //% blockId=device_show_number3
-    //% block="show|number %v"
+    //% weight=98 block="show|number %v"
     export function showNumber3(v: number, interval: number = 150): void { }
 
 }
