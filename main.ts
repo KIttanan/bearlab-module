@@ -9,7 +9,6 @@ namespace BearLab {
     //% blockId=device_show_number
     //% block="show|number %v"
     export function showNumber(value: number, interval?: number) {
-        showString(Math.roundWithPrecision(value, 2).toString(), interval);
     }
 
     //% block="Connect|device|Pin %v"
