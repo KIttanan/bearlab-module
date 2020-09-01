@@ -1,24 +1,12 @@
 /**
  * BearLab graphics blocks
  */
-//% weight=100 color=#0f9c11 icon="\f1b0"
+//% color=190 weight=100 icon="\f1b0" block="Basic Blocks"
+//% groups=['LED matrix', 'Control flow', 'others']
 namespace BearLab {
 
-    /**
-         * Turns left by 90 degrees
-         */
-    //% blockId=BearLabTurnLeft block="turn left"
-    //% weight=89 blockGap=8
-    input.onButtonPressed(Button.A, function () {
-        led.toggle(0, 0)
-    })
-    /**
-         * Turns left by 90 degrees
-         */
-    //% blockId=BearLabTurnRight block="turn right"
-    //% weight=89 blockGap=8
-    input.onButtonPressed(Button.B, function () {
-        led.toggle(0, 0)
-    })
-    
+    //% blockId=device_show_number
+    //% block="show|number %v"
+    export function showNumber(v: number, interval: number = 150): void { }
+
 }
