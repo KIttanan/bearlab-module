@@ -9,4 +9,7 @@ namespace BearLab {
     //% block="show|number %v"
     export function showNumber(v: number, interval: number = 150): void { }
 
+    //% block
+    export function showNumber1(v: number, interval: number = 150): void { }
+
 }
