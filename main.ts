@@ -1,8 +1,7 @@
 /**
  * BearLab graphics blocks
  */
-//% color=190 weight=100 icon="\uf1b0" block="BearLab"
-//% groups=['LED matrix', 'Control flow', 'others']
+//% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
 
     //% blockId=device_show_number
