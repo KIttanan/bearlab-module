@@ -5,7 +5,9 @@
 namespace BearLab {
     //% block
     export function helloWorld() {
+        serial.readUntil(serial.delimiters(Delimiters.NewLine))
     }
+    
     
     //% blockId=device_show_number
     //% block="show|number %v"
