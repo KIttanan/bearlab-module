@@ -27,16 +27,9 @@ namespace BearLab {
     export function fib(value: number): number {
         return value <= 1 ? value : fib(value - 1) + fib(value - 2);
     }
-
-    /**
-     * Read a line of text from the serial port and return the buffer when the delimiter is met.
-     * @param delimiter text delimiter that separates each text chunk
-     */
-    //% help=serial/read-until
-    //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
-    //% weight=19
-    String readUntil(String delimiter) {
-        return PSTR(uBit.serial.readUntil(MSTR(delimiter)));
-      }
+    //% block
+    export function readUntil(){
+        return PSTR(uBit.serial.readUntil(MSTR(Delimiters.NewLine)));
+    }
 
 }
