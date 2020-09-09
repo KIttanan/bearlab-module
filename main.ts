@@ -19,7 +19,7 @@ enum linetracking_power {
  */
 //% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
-    //% block="receive|data|Form|Module|to|LED"
+    //% block="Test|data|receive|rorm|Module|to|LED"
     export function receive() {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
         if (test.includes("11")) {
