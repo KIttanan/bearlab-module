@@ -37,11 +37,14 @@ namespace BearLab {
             if (test.includes("11") || test.includes("10")) {
                 return true
             }
+            else
+                return false
         }
         else if (position == 1) {
             if (test.includes("01") || test.includes("01")) {
                 return true
-            }
+            } else
+                return false
         }
         else
             return false
