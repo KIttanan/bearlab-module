@@ -3,10 +3,31 @@
  */
 //% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
-    //% block="Connect|line|tracking|module"
-    export function randomNumber(): string {
-        serial.setRxBufferSize(32)
-        return "on";
+    //% block="receive|data|Form|Module"
+    export function receive() {
+        let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        if (test.includes("11")) {
+            led.toggle(0, 0)
+            led.toggle(4, 0)
+        } else if (test.includes("00")) {
+            led.toggle(2, 0)
+        } else if (test.includes("10")) {
+            led.toggle(0, 0)
+        } else if (test.includes("01")) {
+            led.toggle(4, 0)
+        }
+        if (test.includes("22")) {
+            led.toggle(1, 4)
+        } else if (test.includes("33")) {
+            led.toggle(3, 4)
+        }
+    }
+
+    //% block="initial|Module"
+    export function init() {
+        SerialPin.P0
+        SerialPin.P1
+        BaudRate.BaudRate115200
     }
     //% blockId=device_show_number
     //% block="show|number %v"
