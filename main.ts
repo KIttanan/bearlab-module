@@ -1,8 +1,8 @@
 enum linetracking_position {
     //% block="Left"
-    0,
+    Left,
     //% block="Right"
-    1
+    Right
 }
 
 /**
