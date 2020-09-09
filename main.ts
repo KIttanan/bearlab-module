@@ -1,3 +1,10 @@
+enum linetracking_position {
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right
+}
+
 /**
  * BearLab graphics blocks
  */
@@ -21,6 +28,23 @@ namespace BearLab {
         } else if (test.includes("33")) {
             led.toggle(3, 4)
         }
+    }
+
+    //% block="Line|tracking|$position|sensor"
+    export function receive(position: linetracking_position) {
+        let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
+        if (position == "Left") {
+            if (test.includes("11") || test.includes("10")) {
+                return true
+            }
+        }
+        else if (position == "Right") {
+            if (test.includes("01") || test.includes("01")) {
+                return true
+            }
+        }
+        else
+            return false
     }
 
     //% block="initial|Module"
