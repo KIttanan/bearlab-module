@@ -7,6 +7,13 @@ enum linetracking_position {
     Bold
 }
 
+enum linetracking_power {
+    //% block="on"
+    on,
+    //% block="off"
+    off,
+}
+
 /**
  * BearLab graphics blocks
  */
@@ -32,6 +39,13 @@ namespace BearLab {
         }
     }
 
+    //% block="Power|Linetracking|is|$switch_"
+    export function Power_line(switch_: linetracking_power) {
+        if(switch_ == 0)
+            serial.writeLine("on")
+        if(switch_ == 1)
+            serial.writeLine("off")
+    }
     //% block="Line|tracking|$position|sensor"
     export function line_receive(position: linetracking_position): boolean {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
