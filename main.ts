@@ -6,8 +6,6 @@ namespace BearLab {
     //% block
     export function helloWorld() {
     }
-    
-    
     //% blockId=device_show_number
     //% block="show|number %v"
     export function showNumber(value: number, interval?: number) {
