@@ -5,6 +5,7 @@
 namespace BearLab {
     //% block="Connect|line|tracking|module"
     export function randomNumber(): string {
+        serial.setRxBufferSize(32)
         return "on";
     }
     //% blockId=device_show_number
