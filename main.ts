@@ -25,9 +25,11 @@ namespace BearLab {
 
     //% block="initial|Module"
     export function init() {
-        SerialPin.P0,
-        SerialPin.P1,
-        BaudRate.BaudRate115200
+        serial.redirect(
+            SerialPin.P0,
+            SerialPin.P1,
+            BaudRate.BaudRate115200
+            )
     }
     //% blockId=device_show_number
     //% block="show|number %v"
