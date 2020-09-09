@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "serial-read": "github:philipphenkel/pxt-serial-read#v0.1.0"
     },
     "files": [
         "main.blocks",

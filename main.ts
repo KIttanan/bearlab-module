@@ -25,9 +25,8 @@ namespace BearLab {
     export function fib(value: number): number {
         return value <= 1 ? value : fib(value - 1) + fib(value - 2);
     }
-    //% block
-    export function readUntil(){
-        return PSTR(uBit.serial.readUntil(MSTR(Delimiters.NewLine)));
+    function readUntil() {
+
     }
 
 }
