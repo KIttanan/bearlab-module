@@ -31,7 +31,7 @@ namespace BearLab {
     }
 
     //% block="Line|tracking|$position|sensor"
-    export function receive(position: linetracking_position) {
+    export function receive(position: linetracking_position): boolean {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
         if (position == "Left") {
             if (test.includes("11") || test.includes("10")) {
