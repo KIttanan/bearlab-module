@@ -1,8 +1,8 @@
 enum linetracking_position {
     //% block="Left"
-    Left,
+    0,
     //% block="Right"
-    Right
+    1
 }
 
 /**
@@ -31,14 +31,14 @@ namespace BearLab {
     }
 
     //% block="Line|tracking|$position|sensor"
-    export function receive(position: linetracking_position): boolean {
+    export function line_receive(position: linetracking_position): boolean {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
-        if (position == "Left") {
+        if (position == 0) {
             if (test.includes("11") || test.includes("10")) {
                 return true
             }
         }
-        else if (position == "Right") {
+        else if (position == 1) {
             if (test.includes("01") || test.includes("01")) {
                 return true
             }
