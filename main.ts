@@ -29,7 +29,7 @@ namespace BearLab {
             SerialPin.P0,
             SerialPin.P1,
             BaudRate.BaudRate115200
-            )
+        )
     }
     //% blockId=device_show_number
     //% block="show|number %v"
@@ -40,7 +40,7 @@ namespace BearLab {
     export function device_connect(value: number) {
         showNumber(value);
     }
-    
+
     //% block
     export function add(x: number, y: number): number {
         return x + y;
