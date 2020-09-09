@@ -41,7 +41,7 @@ namespace BearLab {
                 return false
         }
         else if (position == 1) {
-            if (test.includes("01") || test.includes("01")) {
+            if (test.includes("11") || test.includes("01")) {
                 return true
             } else
                 return false
