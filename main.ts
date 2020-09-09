@@ -42,9 +42,9 @@ namespace BearLab {
     //% block="Power|Linetracking|is|$switch_"
     export function Power_line(switch_: linetracking_power) {
         if(switch_ == 0)
-            serial.writeLine("on")
+            serial.writeLine("start")
         if(switch_ == 1)
-            serial.writeLine("off")
+            serial.writeLine("stop")
     }
     //% block="Line|tracking|$position|sensor"
     export function line_receive(position: linetracking_position): boolean {
