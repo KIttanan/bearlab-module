@@ -3,8 +3,9 @@
  */
 //% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
-    //% block
-    export function helloWorld() {
+    //% block="Connect|line|tracking|module"
+    export function randomNumber(): string {
+        return "on";
     }
     //% blockId=device_show_number
     //% block="show|number %v"
@@ -24,9 +25,6 @@ namespace BearLab {
     //% block
     export function fib(value: number): number {
         return value <= 1 ? value : fib(value - 1) + fib(value - 2);
-    }
-    function readUntil() {
-
     }
 
 }
