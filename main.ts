@@ -2,7 +2,9 @@ enum linetracking_position {
     //% block="Left"
     Left,
     //% block="Right"
-    Right
+    Right,
+    //% block="Left & Right"
+    Bold
 }
 
 /**
@@ -10,7 +12,7 @@ enum linetracking_position {
  */
 //% color="#2A94E0" weight=100 icon="\uf1b0" block="BearLab"
 namespace BearLab {
-    //% block="receive|data|Form|Module"
+    //% block="receive|data|Form|Module|to|LED"
     export function receive() {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
         if (test.includes("11")) {
@@ -33,19 +35,12 @@ namespace BearLab {
     //% block="Line|tracking|$position|sensor"
     export function line_receive(position: linetracking_position): boolean {
         let test = serial.readUntil(serial.delimiters(Delimiters.NewLine))
-        if (position == 0) {
-            if (test.includes("11") || test.includes("10")) {
-                return true
-            }
-            else
-                return false
-        }
-        else if (position == 1) {
-            if (test.includes("11") || test.includes("01")) {
-                return true
-            } else
-                return false
-        }
+        if (test.includes("11"))
+            return true
+        else if (position == 0 && test.includes("10"))
+            return true
+        else if (position == 1 && test.includes("01"))
+            return true
         else
             return false
     }
@@ -58,24 +53,4 @@ namespace BearLab {
             BaudRate.BaudRate115200
         )
     }
-    //% blockId=device_show_number
-    //% block="show|number %v"
-    export function showNumber(value: number, interval?: number) {
-    }
-
-    //% block="Connect|device|Pin %v"
-    export function device_connect(value: number) {
-        showNumber(value);
-    }
-
-    //% block
-    export function add(x: number, y: number): number {
-        return x + y;
-    }
-
-    //% block
-    export function fib(value: number): number {
-        return value <= 1 ? value : fib(value - 1) + fib(value - 2);
-    }
-
 }
