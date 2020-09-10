@@ -25,20 +25,17 @@ namespace BearLab {
         if (test.includes("11")) {
             led.toggle(0, 0)
             led.toggle(4, 0)
-        } else if (test.includes("00")) {
+        } else if (test.includes("00")) 
             led.toggle(2, 0)
-        } else if (test.includes("10")) {
+         else if (test.includes("10")) 
             led.toggle(0, 0)
-        } else if (test.includes("01")) {
+         else if (test.includes("01")) 
             led.toggle(4, 0)
-        }
-        if (test.includes("22")) {
+        if (test.includes("22")) 
             led.toggle(1, 4)
-        } else if (test.includes("33")) {
+        else if (test.includes("33")) 
             led.toggle(3, 4)
-        }
     }
-
     //% block="Power|Linetracking|is|$switch_"
     export function Power_line(switch_: linetracking_power) {
         if(switch_ == 0)
@@ -58,13 +55,8 @@ namespace BearLab {
         else
             return false
     }
-
     //% block="initial|Module"
     export function init() {
-        serial.redirect(
-            SerialPin.P0,
-            SerialPin.P1,
-            BaudRate.BaudRate115200
-        )
+        serial.redirect(SerialPin.P0, SerialPin.P1, BaudRate.BaudRate115200)
     }
 }
